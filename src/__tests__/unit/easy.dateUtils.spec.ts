@@ -59,7 +59,7 @@ describe('getWeekDates', () => {
     const testDate = new Date('2024-11-6');
     const result = getWeekDates(testDate);
 
-    expect(result.length).toBe(7);
+    expect(result).toHaveLength(7);
     expect(result[3]).toEqual(new Date('2024-11-6'));
   });
 
@@ -67,7 +67,7 @@ describe('getWeekDates', () => {
     const testDate = new Date('2024-11-4');
     const result = getWeekDates(testDate);
 
-    expect(result.length).toBe(7);
+    expect(result).toHaveLength(7);
     expect(result[1]).toEqual(new Date('2024-11-4'));
   });
 
@@ -75,7 +75,7 @@ describe('getWeekDates', () => {
     const testDate = new Date('2024-11-10');
     const result = getWeekDates(testDate);
 
-    expect(result.length).toBe(7);
+    expect(result).toHaveLength(7);
     expect(result[0]).toEqual(new Date('2024-11-10'));
   });
 
@@ -83,7 +83,7 @@ describe('getWeekDates', () => {
     const testDate = new Date('2024-12-31');
     const result = getWeekDates(testDate);
 
-    expect(result.length).toBe(7);
+    expect(result).toHaveLength(7);
     expect(result[3]).toEqual(new Date('2025-01-01'));
   });
 
@@ -91,7 +91,7 @@ describe('getWeekDates', () => {
     const testDate = new Date('2024-01-01');
     const result = getWeekDates(testDate);
 
-    expect(result.length).toBe(7);
+    expect(result).toHaveLength(7);
     expect(result[0]).toEqual(new Date('2023-12-31'));
   });
 
@@ -99,7 +99,7 @@ describe('getWeekDates', () => {
     const testDate = new Date('2024-02-29');
     const result = getWeekDates(testDate);
 
-    expect(result.length).toBe(7);
+    expect(result).toHaveLength(7);
     expect(result[4]).toEqual(new Date('2024-02-29'));
   });
 
@@ -107,7 +107,7 @@ describe('getWeekDates', () => {
     const testDate = new Date('2024-02-29');
     const result = getWeekDates(testDate);
 
-    expect(result.length).toBe(7);
+    expect(result).toHaveLength(7);
     expect(result[5]).toEqual(new Date('2024-03-01'));
   });
 });
@@ -117,7 +117,7 @@ describe('getWeeksAtMonth', () => {
     const testDate = new Date('2024-07-01');
     const result = getWeeksAtMonth(testDate);
 
-    expect(result.length).toBe(5);
+    expect(result).toHaveLength(5);
     expect(result[0][0]).toBeNull();
     expect(result[4][3]).toBe(31);
   });
@@ -193,7 +193,7 @@ describe('getEventsForDay', () => {
     const testDate = new Date('2024-11-06').getDate();
     const result = getEventsForDay(mockEvents, testDate);
 
-    expect(result.length).toBe(1);
+    expect(result).toHaveLength(1);
     expect(result[0].title).toBe('회의');
   });
 
@@ -201,21 +201,21 @@ describe('getEventsForDay', () => {
     const testDate = new Date('2024-11-01').getDate();
     const result = getEventsForDay(mockEvents, testDate);
 
-    expect(result.length).toBe(0);
+    expect(result).toHaveLength(0);
   });
 
   it('날짜가 0일 경우 빈 배열을 반환한다', () => {
     const testDate = 0;
     const result = getEventsForDay(mockEvents, testDate);
 
-    expect(result.length).toBe(0);
+    expect(result).toHaveLength(0);
   });
 
   it('날짜가 32일 이상인 경우 빈 배열을 반환한다', () => {
     const testDate = new Date('2024-11-32').getDate();
     const result = getEventsForDay(mockEvents, testDate);
 
-    expect(result.length).toBe(0);
+    expect(result).toHaveLength(0);
   });
 });
 

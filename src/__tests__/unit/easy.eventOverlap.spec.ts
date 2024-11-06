@@ -238,7 +238,7 @@ describe('findOverlappingEvents', () => {
     };
     const result = findOverlappingEvents(newEvent, mockEvents);
 
-    expect(result.length).toBe(2);
+    expect(result).toHaveLength(2);
     expect(result[0].category).toBe('Work');
   });
 
@@ -260,6 +260,6 @@ describe('findOverlappingEvents', () => {
     };
     const result = findOverlappingEvents(newEvent, mockEvents);
 
-    expect(result.length).toBe(0);
+    expect(result).toHaveLength(0);
   });
 });
